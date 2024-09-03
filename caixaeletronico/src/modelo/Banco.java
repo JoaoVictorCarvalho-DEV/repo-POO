@@ -52,5 +52,23 @@ public class Banco implements IBanco{
             }
         }
     }
+
+    public void adicionaConta(Agencia agencia, Conta conta) {
+        agencia.add(conta);
+    }
+    
+    public void imprimirContas() {
+        
+    }
+
+
+    public void imprimirContas(Agencia agencia) {
+        agencia.imprimirContas();
+    }
+
+
+    public void imprimirConta(int numero) {
+        
+    }
     
 }
