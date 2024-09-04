@@ -58,7 +58,9 @@ public class Banco implements IBanco{
     }
     
     public void imprimirContas() {
-        
+        for(Agencia agencia: this.agencias){
+            agencia.imprimirContas();
+        }
     }
 
 
@@ -68,7 +70,20 @@ public class Banco implements IBanco{
 
 
     public void imprimirConta(int numero) {
-        
+        for(Agencia agencia : this.agencias){
+            if(agencia.contaExiste(numero)){
+                System.out.println("A conta: "+numero+" está na agencia: "+agencia.getNumero());
+            }
+        }
+    }
+    
+    public boolean depositar(Conta conta,double valor){
+        boolean resposta = conta.depositar(valor);
+        return resposta;
+    }
+    public String retirar(Conta conta,double valor){
+        String resposta = conta.retirar(valor);
+        return resposta;
     }
     
 }

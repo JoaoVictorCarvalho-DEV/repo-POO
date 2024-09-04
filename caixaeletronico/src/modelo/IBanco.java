@@ -9,4 +9,6 @@ public interface IBanco {
     public void imprimirContas();
     public void imprimirContas(Agencia ag);
     public void imprimirConta(int numero);
+    public boolean depositar(Conta conta,double valor);
+    public String retirar(Conta conta,double valor);
 }

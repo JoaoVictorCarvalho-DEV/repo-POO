@@ -38,9 +38,8 @@ public class Agencia {
     }
     
     public void imprimirContas(){
-        for(int i=0;i<this.contas.size();i++){
-            System.out.println("Conta: "+this.contas.get(i).getNumero());
-            System.out.println("Cliente: "+this.contas.get(i).getCliente().getNome());
+        for(Conta conta:this.contas){
+            System.out.println(conta.toString());
             System.out.println("=============");
         }
     }
@@ -69,5 +68,14 @@ public class Agencia {
         this.endereco = endereco;
     }
     
-    
+    public boolean contaExiste(int numero){
+        boolean resposta =false;
+        for(Conta conta: this.contas){
+            if(conta.getNumero()==numero){
+                resposta=true;
+                break;
+            }
+        }
+        return resposta;
+    }
 }

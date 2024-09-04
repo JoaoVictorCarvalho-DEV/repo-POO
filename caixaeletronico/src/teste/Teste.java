@@ -25,7 +25,15 @@ public class Teste {
         itau.adicionaConta(ag1, cta1);
         itau.adicionaConta(ag1, cta2);
         
-        itau.imprimirContas(ag1);
+        //itau.imprimirConta(222);
+        //System.out.println("--------------");
+        //System.out.println("toString: "+cta1.toString());
+        //itau.imprimirContas(ag1);
+        
+        System.out.println(itau.depositar(cta1, -10000));
+        System.out.println(itau.retirar(cta1, 1500));
+        System.out.println(itau.retirar(cta1, 11500));
+        
         
         
     }
