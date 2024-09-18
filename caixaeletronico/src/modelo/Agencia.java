@@ -25,6 +25,13 @@ public class Agencia {
         contas=new ArrayList<>();
     }
 
+    public Agencia(String gerente, int numero, String endereco) {
+        this.gerente = gerente;
+        this.numero = numero;
+        this.endereco = endereco;
+    }
+
+    
     public ArrayList<Conta> getContas() {
         return contas;
     }
