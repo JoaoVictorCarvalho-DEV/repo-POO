@@ -53,10 +53,12 @@ public class Banco implements IBanco{
         }
     }
 
+    @Override
     public void adicionaConta(Agencia agencia, Conta conta) {
         agencia.add(conta);
     }
     
+    @Override
     public void imprimirContas() {
         for(Agencia agencia: this.agencias){
             agencia.imprimirContas();
@@ -64,11 +66,13 @@ public class Banco implements IBanco{
     }
 
 
+    @Override
     public void imprimirContas(Agencia agencia) {
         agencia.imprimirContas();
     }
 
 
+    @Override
     public void imprimirConta(int numero) {
         for(Agencia agencia : this.agencias){
             if(agencia.contaExiste(numero)){
@@ -77,12 +81,30 @@ public class Banco implements IBanco{
         }
     }
     
+    @Override
     public boolean depositar(Conta conta,double valor){
         boolean resposta = conta.depositar(valor);
         return resposta;
     }
+    @Override
     public String retirar(Conta conta,double valor){
         String resposta = conta.retirar(valor);
+        return resposta;
+    }
+    
+    public boolean autenticarCliente(int agencia,int conta,String senha){
+        boolean resposta = false;
+        for(Agencia ag : this.agencias){
+            if(ag.getNumero()==agencia){
+                for(Conta cta : ag.getContas()){
+                    if(cta.getNumero()==conta){
+                        if(cta.getCliente().getSenha().equals(senha)){
+                            resposta = true;
+                        }
+                    }
+                }
+            }
+        } 
         return resposta;
     }
     

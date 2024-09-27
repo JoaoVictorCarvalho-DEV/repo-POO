@@ -11,4 +11,5 @@ public interface IBanco {
     public void imprimirConta(int numero);
     public boolean depositar(Conta conta,double valor);
     public String retirar(Conta conta,double valor);
+    public boolean autenticarCliente(int agencia,int conta,String senha);
 }
