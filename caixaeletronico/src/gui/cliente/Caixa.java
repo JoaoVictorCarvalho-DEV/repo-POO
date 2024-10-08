@@ -17,9 +17,11 @@ public class Caixa extends javax.swing.JPanel {
      * Creates new form Caixa
      */
     IBanco banco;
-    public Caixa(IBanco banco) {
+    Principal framePai; 
+    public Caixa(Principal framePai,IBanco banco) {
         initComponents();
         this.banco=banco;
+        this.framePai=framePai;
     }
 
     /**
@@ -68,7 +70,7 @@ public class Caixa extends javax.swing.JPanel {
     private void comboEscolhaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboEscolhaItemStateChanged
         String texto = String.valueOf(comboEscolha.getSelectedItem());
         if(texto.equals("Depositar")){
-            lblMensagem.setText("Depositar");
+            this.framePai.trocarPainel(new Depositar(this.framePai,this.banco));
         }else{
             lblMensagem.setText("outro");
         }

@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/44034660520/Documents/NetBeansProjects/caixaeletronico/src/gui/adm/JPConta.java</file>
-            <file>file:/C:/Users/44034660520/Documents/NetBeansProjects/caixaeletronico/src/gui/adm/Principal.java</file>
+            <file>file:/C:/projetosJava/caixaeletronico/src/gui/cliente/Autenticacao.java</file>
+            <file>file:/C:/projetosJava/caixaeletronico/src/modelo/ContaCorrente.java</file>
+            <file>file:/C:/projetosJava/caixaeletronico/src/modelo/Conta.java</file>
+            <file>file:/C:/projetosJava/caixaeletronico/src/modelo/ContaPoupanca.java</file>
+            <file>file:/C:/projetosJava/caixaeletronico/src/gui/cliente/Principal.java</file>
+            <file>file:/C:/projetosJava/caixaeletronico/src/gui/cliente/Caixa.java</file>
         </group>
     </open-files>
 </project-private>

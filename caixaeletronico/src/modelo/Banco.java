@@ -108,4 +108,31 @@ public class Banco implements IBanco{
         return resposta;
     }
     
+    public boolean transferir(Conta origem,Conta destino,double valor){
+        boolean resposta=false;
+        if(contaExiste(origem)&&contaExiste(destino)){
+            if(origem.getSaldo()>=valor){
+                this.retirar(origem, valor);
+                this.depositar(destino, valor);
+                resposta=true;
+            }
+        }
+        
+        
+        return resposta;
+    }
+    
+    private boolean contaExiste(Conta conta){
+        boolean resposta=false;
+        for(Agencia ag : this.agencias){
+            for(Conta cta : ag.getContas()){
+                if(cta.getNumero()==conta.getNumero()){
+                    resposta=true;
+                }
+            }                        
+        }
+        
+        
+        return resposta;
+    }
 }

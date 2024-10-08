@@ -1,7 +1,7 @@
-
+  
 package modelo;
 
-public class Conta {
+public abstract class Conta {
     private int numero;
     private double saldo;
     private double limite;
@@ -10,8 +10,11 @@ public class Conta {
     public Conta(int numero, Cliente cliente) {
         this.numero = numero;
         this.cliente = cliente;
+        this.setSaldoInicial();
     }
 
+    public abstract void setSaldoInicial();
+    
     public int getNumero() {
         return numero;
     }
@@ -46,7 +49,7 @@ public class Conta {
     
     @Override
     public String toString(){
-        return "Númro: "+this.getNumero()+" Cliente: "+this.getCliente().getNome();
+        return "Númro: "+this.getNumero()+" Cliente: "+this.getCliente().getNome()+" Saldo: "+this.getSaldo();
     }
     
     public boolean depositar(double valor){
@@ -59,10 +62,11 @@ public class Conta {
     }
     
     public String retirar(double valor){
-        if(valor>(this.saldo+this.limite)){
-            return "Saldo insuficiente";
-        }else{
+        if(this.getSaldo()>valor){
+            this.setSaldo(saldo-valor);
             return "Valor retirado com sucesso";
+        }else{
+            return "Saldo insuficiente";       
         }
     }
     

@@ -102,7 +102,7 @@ public class Autenticacao extends javax.swing.JPanel {
         String senha = String.valueOf(pswSenha.getPassword());
         boolean resposta = banco.autenticarCliente(agencia, conta, senha);
         if(resposta){
-            this.framePai.trocarPainel(new Caixa(this.banco));
+            this.framePai.trocarPainel(new Caixa(this.framePai,this.banco));
         }else{
             lblMensagem.setText("Não foi possível autenticar");
         }
